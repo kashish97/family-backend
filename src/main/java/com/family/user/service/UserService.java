@@ -11,9 +11,9 @@ public class UserService {
     @Autowired
     UserDao userDao;
 
-    public User getUser(String userId){
+    public User getUser(String phone){
 
-        User user = userDao.findOne(userId);
+        User user = userDao.findByPhone(phone);
 
         return user!=null?user:new User();
 

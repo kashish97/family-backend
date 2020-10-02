@@ -19,9 +19,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
-    public ResponseEntity<ServiceResponse<User>> getUserDetailsFromPhone(@PathVariable("userId") String userId) throws FamilyCoreException {
-        ServiceResponse<User> response = new ServiceResponse<User>(userService.getUser(userId),
+    @RequestMapping(value = "/{phone}", method = RequestMethod.GET)
+    public ResponseEntity<ServiceResponse<User>> getUserDetailsFromPhone(@PathVariable("phone") String phone) throws FamilyCoreException {
+        ServiceResponse<User> response = new ServiceResponse<User>(userService.getUser(phone),
                 null);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
